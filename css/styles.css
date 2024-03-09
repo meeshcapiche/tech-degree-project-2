@@ -3,88 +3,119 @@
 ==================================== */
 
 body {
-    font: 300 16px/1.4 Roboto, sans-serif;
-    color: rgb(72, 70, 70);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin: 0;
-    text-align: center;
-  }
+  font: 300 16px/1.4 Roboto, sans-serif;
+  color: darkslategrey;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  text-align: center;
+}
+  
+header,
+footer {
+  background-color: rgb(241, 241, 241);
+  padding: 2%;
+}
 
-  header {
-    background-color: rgb(241, 241, 241);
-    padding: 2%;
-  }
+h1 {
+  font-size: 1.8em;
+  line-height: 1.1em;
+  font-weight: bold;
+}
 
-  h2 {
-    font-size: 1.6em;
-    font-weight: bold;
-  }
+h2 {
+  font-size: 1.2em;
+  line-height: 1.2em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
 
-  h3 {
-    font-size: 1.2em;
-    font-weight: 400;
-  }
+h3 {
+  font-size: 1.1em;
+  font-weight: 400;
+}
 
-  main {
-    margin: 6%;
+main {
+  margin: 6%;
 }
 
 img {
-    max-width: 100%;
+  max-width: 100%;
+}
+
+article {
+  padding: 2%;
 }
 
 .intro {
-    padding: 8% 2% 4% 2%;
+  padding: 8% 2% 4% 2%;
 }
 
-  .page-title {
-    font-weight: bold;
-    text-transform: uppercase; 
-    }
+.page-title {
+  font-weight: bold;
+  text-transform: uppercase; 
+}
 
-  .intro-text {
-    font-size: 1.4em;
-  }
+.intro-text {
+  font-size: 1.4em;
+}
 
-  .intro img {
-    max-width: 70%;
-    }
+.intro img {
+  max-width: 70%;
+}
 
-  /*.row {
-    flex: 1;
-  }*/
-
-  .main-header, 
-  .main-nav,
-  main,
+.main-header, 
+.main-nav,
+.footer-nav,
+main,
 .intro {
-    display: flex;
-  }
+  display: flex;
+}
 
 .main-header,
 main, 
-.intro, 
-.sub-page {
-    flex-flow: column wrap;
-    align-items: center;
+.intro {
+  flex-flow: column wrap;
+  align-items: center;
 }
 
 .main-nav {
-    flex-flow: row wrap;
-    width: 100%;
+  flex-flow: row wrap;
+  width: 100%;
 }
 
-.main-nav li {
-    width: 100%;
-    padding: 4% 2%;
-    margin: 2%;
-    list-style: none;
-    background-color: white;
+.main-nav a {
+  width: 100%;
+  padding: 4% 2%;
+  margin: 2%;
+  background-color: white;
 }
 
+.main-nav,
+.footer-nav a {
+  color: darkslategray;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+}
 
+.contact-info {
+  padding: 8% 4%;
+}
+
+.footer-nav {
+  border-top: solid lightgrey 1px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2% 4%;
+}
+
+.contact-info a {
+  font-weight: bold;
+  text-decoration: none;
+  color: darkslategray;
+}
 
 
 /* ================================= 
