@@ -3,7 +3,7 @@
 ==================================== */
 
 body {
-  font: 300 16px/1.4 Roboto, sans-serif;
+  font: 300 62.5%/1.4 Roboto, sans-serif;
   color: darkslategrey;
   display: flex;
   flex-direction: column;
@@ -18,22 +18,33 @@ footer {
   padding: 2%;
 }
 
+p,
+a {
+  font-size: 1.6em;
+}
+
 h1 {
-  font-size: 1.8em;
+  font-size: 2.4em;
   line-height: 1.1em;
   font-weight: bold;
 }
 
 h2 {
-  font-size: 1.2em;
+  font-size: 1.8em;
   line-height: 1.2em;
   font-weight: bold;
   text-transform: uppercase;
 }
 
 h3 {
-  font-size: 1.1em;
+  font-size: 1.8em;
+  line-height: 1.3em;
   font-weight: 400;
+}
+
+h4 {
+  font-size: 1.8em;
+  font-weight: 600;
 }
 
 main {
@@ -44,8 +55,28 @@ img {
   max-width: 100%;
 }
 
-article {
+.card {
+  flex-flow: row wrap;
+  justify-content: center;
   padding: 2%;
+}
+
+.card h3 {
+  margin-block-end: 0;
+}
+
+.intro-text {
+  font-size: 1.8em;
+}
+
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+
+a:hover {
+  color:rgb(163, 10, 110);
 }
 
 .intro {
@@ -57,10 +88,6 @@ article {
   text-transform: uppercase; 
 }
 
-.intro-text {
-  font-size: 1.4em;
-}
-
 .intro img {
   max-width: 70%;
 }
@@ -68,16 +95,21 @@ article {
 .main-header, 
 .main-nav,
 .footer-nav,
-main,
-.intro {
+.portfolio-wrapper,
+.intro,
+.card {
   display: flex;
 }
 
 .main-header,
-main, 
 .intro {
   flex-flow: column wrap;
   align-items: center;
+}
+
+.portfolio-wrapper {
+  flex-flow: column wrap;
+  justify-content: space-around;
 }
 
 .main-nav {
@@ -93,15 +125,18 @@ main,
 }
 
 .main-nav,
-.footer-nav a {
+.footer-nav,
+.footer-nav-tablet,
+ a {
   color: darkslategray;
   text-transform: uppercase;
   font-weight: bold;
-  text-decoration: none;
 }
 
 .contact-info {
   padding: 8% 4%;
+  max-width: 80%;
+  margin: auto;
 }
 
 .footer-nav {
@@ -112,25 +147,73 @@ main,
 }
 
 .contact-info a {
+  font-size: 1.2em;
   font-weight: bold;
   text-decoration: none;
   color: darkslategray;
 }
 
+.footer-nav-tablet {
+  display: none;
+}
 
 /* ================================= 
   Media Queries
 ==================================== */
 
 
-
 /* When the browser is at least 769px and above */
 @media (min-width: 769px) {  /* Tablets  */
 
-    .main-header {
+  .main-nav {
+    flex-flow: row nowrap;
+    width: auto;
+    justify-content: center;
+    gap: 4%;
+  }
+
+  .main-nav a {
+    background-color:rgb(255, 255, 255, 0);
+  }
+
+  .portfolio-wrapper {
+    flex-flow: row wrap;
+  }
     
-    }
-    
+  .card { /* flex item*/
+    flex: 1 45%;
+  }
+
+  .card-text-box {
+    max-width: 90%;
+  }
+
+  .contact-info {
+    max-width: 70%;
+  }
+
+  #back-to-top {
+    display: none;
+  }
+
+  .footer-nav-tablet {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2% 4%;
+  }
+
+  .footer-nav-tablet a {
+    padding: 0 4%;
+  }
+
+  .intro {
+    flex-flow: row-reverse nowrap;
+    gap: 2%;
+    text-align: start;
+  }
+
+
     }
 
 /* When the browser is at least 1025px and above */
