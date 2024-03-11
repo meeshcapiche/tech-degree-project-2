@@ -5,11 +5,11 @@
 body {
   font: 300 62.5%/1.4 Roboto, sans-serif;
   color: darkslategrey;
-  display: flex;
-  flex-direction: column;
   min-height: 100vh;
   margin: 0;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
   
 header,
@@ -18,6 +18,14 @@ footer {
   padding: 2%;
 }
 
+main {
+  margin: 4% 2%;
+  gap: 2%;
+}
+
+/* ================================= 
+  Font Styles
+==================================== */
 p,
 a {
   font-size: 1.6em;
@@ -47,40 +55,8 @@ h4 {
   font-weight: 600;
 }
 
-main {
-  margin: 6%;
-}
-
-img {
-  max-width: 100%;
-}
-
-.card {
-  flex-flow: row wrap;
-  justify-content: center;
-  padding: 2%;
-}
-
-.card h3 {
-  margin-block-end: 0;
-}
-
-.intro-text {
+.intro-item-2 { /*intro paragraph text*/
   font-size: 1.8em;
-}
-
-a,
-a:visited,
-a:hover {
-  text-decoration: none;
-}
-
-a:hover {
-  color:rgb(163, 10, 110);
-}
-
-.intro {
-  padding: 8% 2% 4% 2%;
 }
 
 .page-title {
@@ -88,43 +64,10 @@ a:hover {
   text-transform: uppercase; 
 }
 
-.intro img {
-  max-width: 70%;
-}
-
-.main-header, 
-.main-nav,
-.footer-nav,
-.portfolio-wrapper,
-.intro,
-.card {
-  display: flex;
-}
-
-.main-header,
-.intro {
-  flex-flow: column wrap;
-  align-items: center;
-}
-
-.portfolio-wrapper {
-  flex-flow: column wrap;
-  justify-content: space-around;
-}
-
-.main-nav {
-  flex-flow: row wrap;
-  width: 100%;
-}
-
-.main-nav a {
-  width: 100%;
-  padding: 4% 2%;
-  margin: 2%;
-  background-color: white;
-}
-
-.main-nav,
+/* ================================= 
+  Link Styling
+==================================== */
+.main-nav, /* link text styles for nav in header/footer */
 .footer-nav,
 .footer-nav-tablet,
  a {
@@ -132,30 +75,109 @@ a:hover {
   text-transform: uppercase;
   font-weight: bold;
 }
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+a:hover {
+  color:rgb(163, 10, 110);
+}
+/* ================================= 
+  All Flex Display
+==================================== */
+.main-header, 
+.main-nav,
+.footer-nav,
+.portfolio-wrapper,
+.intro {
+  display: flex;
+}
+/* ================================= 
+  Flex Containers
+==================================== */
 
-.contact-info {
-  padding: 8% 4%;
-  max-width: 80%;
-  margin: auto;
+.main-header {
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-around;
+}
+
+.main-nav {
+  flex-direction: column;
+}
+
+.intro { /*intro and image of man*/
+  flex-direction: column; 
+  padding: 8% 2% 4% 2%;
+}
+
+.portfolio-wrapper { /*section with articles*/
+  flex-direction: column;
+  justify-content: center;
 }
 
 .footer-nav {
   border-top: solid lightgrey 1px;
   justify-content: space-between;
   align-items: center;
-  padding: 2% 4%;
+}
+
+/* ================================= 
+  Flex Items
+==================================== */
+
+.button { /*main nav button on mobile */
+  padding: 4%;
+  margin: 2%;
+  background: white;
+} 
+
+/* .intro-item {
+  flex-grow: 1;
+} */
+
+.card {
+  padding: 1%;
+  margin: 1%;
+}
+
+.card h3 {
+  margin-block-end: 0;
+}
+
+.card img {
+  max-width: 100%;
+}
+
+/* ================================= 
+  Footer
+==================================== */
+
+.contact-info {
+  padding: 8% 2%;
+  max-width: 80%;
+  margin: auto;
 }
 
 .contact-info a {
   font-size: 1.2em;
+  text-transform: none;
   font-weight: bold;
   text-decoration: none;
   color: darkslategray;
 }
 
-.footer-nav-tablet {
-  display: none;
+.item {
+  padding: 2%;
 }
+
+.item-3, 
+.item-4, 
+.item-5 {
+  display:none;
+}
+
 
 /* ================================= 
   Media Queries
@@ -165,6 +187,22 @@ a:hover {
 /* When the browser is at least 769px and above */
 @media (min-width: 769px) {  /* Tablets  */
 
+  .intro {
+    flex-flow: row-reverse nowrap;
+    gap: 2%;
+    text-align: start;
+  }
+
+  .intro-item-2 { /*text in intro section */
+    margin: 0;
+  }
+  
+  .intro-item-1 {
+    
+    
+  }
+
+  
   .main-nav {
     flex-flow: row nowrap;
     width: auto;
@@ -172,8 +210,10 @@ a:hover {
     gap: 4%;
   }
 
-  .main-nav a {
+  .button { /*hide button styling on tablet/desktop */
     background-color:rgb(255, 255, 255, 0);
+    padding: 2%;
+    margin: 1%;
   }
 
   .portfolio-wrapper {
@@ -181,11 +221,11 @@ a:hover {
   }
     
   .card { /* flex item*/
-    flex: 1 45%;
+    flex: 1 42%;
   }
 
-  .card-text-box {
-    max-width: 90%;
+  .card p {
+    padding: 0 6% 8% 6%;
   }
 
   .contact-info {
@@ -193,37 +233,34 @@ a:hover {
   }
 
   #back-to-top {
-    display: none;
+    display:none;
   }
 
-  .footer-nav-tablet {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2% 4%;
-  }
+/* ================================= 
+  Flex Items
+==================================== */
 
-  .footer-nav-tablet a {
-    padding: 0 4%;
-  }
+.item-3, 
+.item-4, 
+.item-5 {
+  display:block;
+}
 
-  .intro {
-    flex-flow: row-reverse nowrap;
-    gap: 2%;
-    text-align: start;
-  }
+.item {
+  padding: 2% 2%;
+}
+
+.item-1 {
+  margin-right: auto;
+}
 
 
-    }
+}
 
 /* When the browser is at least 1025px and above */
     @media (min-width: 1025px) {  /* Desktop */
     
-    .main-header {
-      flex-direction: row;
-      justify-content:space-between;
-    }
-    
+   
     }
 
 
