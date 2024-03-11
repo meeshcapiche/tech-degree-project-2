@@ -5,27 +5,24 @@
 body {
   font: 300 62.5%/1.4 Roboto, sans-serif;
   color: darkslategrey;
+  background-color: rgb(241, 241, 241);
   min-height: 100vh;
-  margin: 0;
+  margin: 2em auto;
   text-align: center;
-  display: flex;
-  flex-direction: column;
+  max-width: 1000px;
+  min-width: 320px;
+}
+
+main {
+  background-color: white;
 }
   
 header,
 footer {
-  background-color: rgb(241, 241, 241);
   padding: 2%;
 }
 
-main {
-  margin: 4% 2%;
-  gap: 2%;
-}
-
-/* ================================= 
-  Font Styles
-==================================== */
+/* Font Styles */
 p,
 a {
   font-size: 1.6em;
@@ -41,7 +38,6 @@ h2 {
   font-size: 1.8em;
   line-height: 1.2em;
   font-weight: bold;
-  text-transform: uppercase;
 }
 
 h3 {
@@ -59,9 +55,9 @@ h4 {
   font-size: 1.8em;
 }
 
-.page-title {
-  font-weight: bold;
+.page-title { /*text for page sections */
   text-transform: uppercase; 
+  margin: 2em;
 }
 
 /* ================================= 
@@ -84,8 +80,9 @@ a:hover {
   color:rgb(163, 10, 110);
 }
 /* ================================= 
-  All Flex Display
+  Main Flex Display
 ==================================== */
+body,
 .main-header, 
 .main-nav,
 .footer-nav,
@@ -93,6 +90,12 @@ a:hover {
 .intro {
   display: flex;
 }
+
+body {
+  flex-direction:column;
+}
+
+
 /* ================================= 
   Flex Containers
 ==================================== */
@@ -104,17 +107,20 @@ a:hover {
 }
 
 .main-nav {
-  flex-direction: column;
+  flex-flow: row wrap;
+  justify-content: center;
 }
 
 .intro { /*intro and image of man*/
-  flex-direction: column; 
-  padding: 8% 2% 4% 2%;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 2em;
 }
 
 .portfolio-wrapper { /*section with articles*/
-  flex-direction: column;
+  flex-flow: row wrap;
   justify-content: center;
+  gap: 2em;
 }
 
 .footer-nav {
@@ -127,19 +133,20 @@ a:hover {
   Flex Items
 ==================================== */
 
+.nav-item {
+
+}
+
+
 .button { /*main nav button on mobile */
   padding: 4%;
   margin: 2%;
   background: white;
+  width: 100%;
 } 
 
-/* .intro-item {
-  flex-grow: 1;
-} */
-
 .card {
-  padding: 1%;
-  margin: 1%;
+  width: 290px;
 }
 
 .card h3 {
@@ -148,6 +155,18 @@ a:hover {
 
 .card img {
   max-width: 100%;
+}
+
+.intro-item { 
+  
+}
+
+.intro-item-2 {
+  flex: 200px 4;
+}
+
+.into-item-1 { /* img in intro */
+  flex: 150px 1;
 }
 
 /* ================================= 
@@ -187,60 +206,30 @@ a:hover {
 /* When the browser is at least 769px and above */
 @media (min-width: 769px) {  /* Tablets  */
 
-  .intro {
-    flex-flow: row-reverse nowrap;
-    gap: 2%;
-    text-align: start;
+  .main-nav h1 {
+    margin-right: auto;
   }
 
-  .intro-item-2 { /*text in intro section */
-    margin: 0;
-  }
-  
-  .intro-item-1 {
-    
-    
-  }
-
-  
-  .main-nav {
-    flex-flow: row nowrap;
-    width: auto;
-    justify-content: center;
-    gap: 4%;
-  }
-
-  .button { /*hide button styling on tablet/desktop */
+ .button { /*hide button styling on tablet/desktop */
     background-color:rgb(255, 255, 255, 0);
     padding: 2%;
     margin: 1%;
+    width: auto;
   }
 
-  .portfolio-wrapper {
-    flex-flow: row wrap;
-  }
-    
-  .card { /* flex item*/
-    flex: 1 42%;
-  }
-
-  .card p {
-    padding: 0 6% 8% 6%;
-  }
-
-  .contact-info {
+  /* .contact-info {
     max-width: 70%;
-  }
+  } */
 
   #back-to-top {
     display:none;
-  }
+  } 
 
 /* ================================= 
   Flex Items
 ==================================== */
 
-.item-3, 
+ .item-3, 
 .item-4, 
 .item-5 {
   display:block;
@@ -259,7 +248,20 @@ a:hover {
 
 /* When the browser is at least 1025px and above */
     @media (min-width: 1025px) {  /* Desktop */
-    
+
+      main {
+        margin: 0 2% 4% 2%;
+      }
+
+      .main-nav {
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      
+
+
+
    
     }
 
