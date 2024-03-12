@@ -1,13 +1,12 @@
 /* ================================= 
   Base Styles
 ==================================== */
-
 body {
   font: 300 62.5%/1.4 Roboto, sans-serif;
   color: darkslategrey;
   background-color: rgb(241, 241, 241);
   min-height: 100vh;
-  margin: 2em auto;
+  margin: 0 auto;
   text-align: center;
   max-width: 1000px;
   min-width: 320px;
@@ -15,6 +14,7 @@ body {
 
 main {
   background-color: white;
+  padding: 4em 0;
 }
   
 header,
@@ -22,7 +22,7 @@ footer {
   padding: 2%;
 }
 
-/* Font Styles */
+/* ====== Font ======= */
 p,
 a {
   font-size: 1.6em;
@@ -51,18 +51,18 @@ h4 {
   font-weight: 600;
 }
 
-.intro-item-2 { /*intro paragraph text*/
-  font-size: 1.8em;
-}
-
+p.intro-item-2,
+.contact-info p { 
+  font-size: calc(1.8em + 0.390625vw);
+} 
+  
 .page-title { /*text for page sections */
   text-transform: uppercase; 
-  margin: 2em;
+  margin-bottom: 2em;
+  font-size: 1.6em;
 }
 
-/* ================================= 
-  Link Styling
-==================================== */
+/* ====== Link Styling ======= */
 .main-nav, /* link text styles for nav in header/footer */
 .footer-nav,
 .footer-nav-tablet,
@@ -79,9 +79,8 @@ a:hover {
 a:hover {
   color:rgb(163, 10, 110);
 }
-/* ================================= 
-  Main Flex Display
-==================================== */
+
+/* ====== Main Flex Display ======= */
 body,
 .main-header, 
 .main-nav,
@@ -91,19 +90,19 @@ body,
   display: flex;
 }
 
-body {
-  flex-direction:column;
-}
-
-
 /* ================================= 
   Flex Containers
 ==================================== */
+
+body {
+  flex-direction:column;
+}
 
 .main-header {
   flex-direction: column;
   align-content: center;
   justify-content: space-around;
+  margin: 2em;
 }
 
 .main-nav {
@@ -112,15 +111,15 @@ body {
 }
 
 .intro { /*intro and image of man*/
-  flex-flow: row wrap;
+  flex-flow: column nowrap;
   justify-content: center;
-  gap: 2em;
+  align-items: center;
 }
 
 .portfolio-wrapper { /*section with articles*/
   flex-flow: row wrap;
   justify-content: center;
-  gap: 2em;
+  gap: 2%;
 }
 
 .footer-nav {
@@ -129,14 +128,7 @@ body {
   align-items: center;
 }
 
-/* ================================= 
-  Flex Items
-==================================== */
-
-.nav-item {
-
-}
-
+/* ====== Flex Items ======= */
 
 .button { /*main nav button on mobile */
   padding: 4%;
@@ -145,37 +137,35 @@ body {
   width: 100%;
 } 
 
+.intro-item img {
+  width: 100%;
+  height: auto;
+} 
+
+.card img {
+  /* max-width: 300px;
+  height: auto; */
+  max-width: 100%;
+  margin: auto;
+}
+
 .card {
-  width: 290px;
+  /* width: 290px; */
+  /* flex: 1 0 auto; */
+  /* flex: 1 0 310px; */
+  /* min-width: 100%; */
+  max-width: 300px;
+  padding: 2%;
 }
 
 .card h3 {
   margin-block-end: 0;
 }
 
-.card img {
-  max-width: 100%;
-}
-
-.intro-item { 
-  
-}
-
-.intro-item-2 {
-  flex: 200px 4;
-}
-
-.into-item-1 { /* img in intro */
-  flex: 150px 1;
-}
-
-/* ================================= 
-  Footer
-==================================== */
-
+/* ====== Footer ======= */
 .contact-info {
   padding: 8% 2%;
-  max-width: 80%;
+  max-width: 500px;
   margin: auto;
 }
 
@@ -196,73 +186,94 @@ body {
 .item-5 {
   display:none;
 }
-
-
 /* ================================= 
   Media Queries
 ==================================== */
 
+/* ==== When the browser is at least 768px and above === */
+@media (min-width: 768px) { 
 
-/* When the browser is at least 769px and above */
-@media (min-width: 769px) {  /* Tablets  */
-
-  .main-nav h1 {
-    margin-right: auto;
+  body {
+    margin: 2em auto;
   }
 
- .button { /*hide button styling on tablet/desktop */
+  .main-nav h1 {
+    width: 100%;
+  }
+
+  .button { /*hide button styling on tablet/desktop */
     background-color:rgb(255, 255, 255, 0);
     padding: 2%;
     margin: 1%;
     width: auto;
   }
 
-  /* .contact-info {
-    max-width: 70%;
-  } */
+  .intro { /*intro and image of man*/
+    flex-flow: row-reverse nowrap;
+    text-align: start;
+    gap: 2em;
+  }
 
-  #back-to-top {
+  #back-to-top { /*hides the back to top button in footer */
     display:none;
   } 
 
-/* ================================= 
-  Flex Items
-==================================== */
+  /* ==== Flex Items === */
 
- .item-3, 
-.item-4, 
-.item-5 {
-  display:block;
+  /*shows navigation pages in footer, previously hidden */
+  .item-3, 
+  .item-4, 
+  .item-5 {
+    display:block;
+  }
+
+  .item {
+    padding: 2% 2%;
+  }
+
+  .item-1 {
+    margin-right: auto;
+  }
+
+  .intro {
+    align-items: flex-start;
+    padding: 2em 0;
+  }
+
+  .intro-item-1 {
+    flex: 0 1 45%;
+  }
+
+  .intro-item-2 {
+    flex: 0 1 55%; /* Don't grow, can shrink, base of 60% */
+    margin: 0;
+  }
+
 }
 
-.item {
-  padding: 2% 2%;
-}
+/* ==== When the browser is at least 1024px and above === */
+@media (min-width: 1024px) {  /* Desktop */
+  
+  main {
+    margin: 0 2% 4% 2%;
+  }
 
-.item-1 {
-  margin-right: auto;
-}
+  .main-nav {
+    justify-content: space-between;
+    align-items: center;
+  }
 
+  .main-nav h1 {
+    margin-right: auto;
+    width: auto;
+  }
 
-}
+  .portfolio-wrapper { /*section with articles*/
+    gap: 1%;
+  }
 
-/* When the browser is at least 1025px and above */
-    @media (min-width: 1025px) {  /* Desktop */
+  .card {
+    max-width: 28%;
+  }
 
-      main {
-        margin: 0 2% 4% 2%;
-      }
-
-      .main-nav {
-        justify-content: space-between;
-        align-items: center;
-      }
-      
-      
-
-
-
-   
-    }
-
-
+ }
