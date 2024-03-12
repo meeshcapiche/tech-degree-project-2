@@ -20,6 +20,7 @@ main {
 header,
 footer {
   padding: 2%;
+  margin: 0 1em;
 }
 
 /* ====== Font ======= */
@@ -53,7 +54,7 @@ h4 {
 
 p.intro-item-2,
 .contact-info p { 
-  font-size: calc(1.8em + 0.390625vw);
+  font-size: calc(1.6em + 0.390625vw);
 } 
   
 .page-title { /*text for page sections */
@@ -102,7 +103,7 @@ body {
   flex-direction: column;
   align-content: center;
   justify-content: space-around;
-  margin: 2em;
+  gap: 2em;
 }
 
 .main-nav {
@@ -120,6 +121,7 @@ body {
   flex-flow: row wrap;
   justify-content: center;
   gap: 2%;
+  padding: 1em;
 }
 
 .footer-nav {
@@ -143,19 +145,13 @@ body {
 } 
 
 .card img {
-  /* max-width: 300px;
-  height: auto; */
   max-width: 100%;
   margin: auto;
 }
 
 .card {
-  /* width: 290px; */
-  /* flex: 1 0 auto; */
-  /* flex: 1 0 310px; */
-  /* min-width: 100%; */
-  max-width: 300px;
   padding: 2%;
+  flex: 0 1 auto;
 }
 
 .card h3 {
@@ -164,7 +160,7 @@ body {
 
 /* ====== Footer ======= */
 .contact-info {
-  padding: 8% 2%;
+  padding: 4% 2%;
   max-width: 500px;
   margin: auto;
 }
@@ -194,7 +190,7 @@ body {
 @media (min-width: 768px) { 
 
   body {
-    margin: 2em auto;
+    margin: 0 auto;
   }
 
   .main-nav h1 {
@@ -249,13 +245,17 @@ body {
     margin: 0;
   }
 
+  .card {
+    flex: 0 1 44%;
+  }
+
 }
 
 /* ==== When the browser is at least 1024px and above === */
 @media (min-width: 1024px) {  /* Desktop */
   
   main {
-    margin: 0 2% 4% 2%;
+    margin: 0 2% 2% 2%;
   }
 
   .main-nav {
@@ -273,7 +273,7 @@ body {
   }
 
   .card {
-    max-width: 28%;
+    flex: 0 1 28%;
   }
 
  }
